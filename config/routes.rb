@@ -1,4 +1,16 @@
 Pressbal::Application.routes.draw do
+
+  get "visas/index"
+  get "visas/show"
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  resources :tours, only: [:index, :show]
+  resources :news, only: [:index, :show]
+  resources :visas, only: [:index, :show]
+
+  get '/home' => 'static_pages#home'
+  root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

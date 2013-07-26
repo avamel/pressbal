@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_of_tour_id: 
+  tour_id: 
+
+two:
+  type_of_tour_id: 
+  tour_id: 

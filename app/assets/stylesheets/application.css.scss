@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+
+/*Base CSS*/
+.content {
+ margin: 0 auto;
+}
+
+
