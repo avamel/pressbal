@@ -16,10 +16,27 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-
 /*Base CSS*/
-.content {
- margin: 0 auto;
+.container {
+  width: 940px;
+  margin: 0 auto;
 }
 
+.top-panel {
+  padding: 20px 0 0 0;
+  border-bottom: 1px solid #000;
+}
 
+.down-panel {
+  padding: 20px 0 0 0;
+  border-bottom: 1px solid #000;
+}
+
+.content {
+  padding:20px 0 50px 0;
+  border-bottom: 1px solid #000;
+}
+
+.bottom-panel {
+  padding: 20px 0 40px;
+}

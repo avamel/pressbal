@@ -1,16 +1,37 @@
-%footer
-  %ul.nav.nav-pills
-    %li.menu-item.disabled
-      = link_to 'Туры', "#"
-    %li.menu-item.disabled
-      = link_to 'Визы', "#"
-    %li.menu-item.disabled
+.row
+  .logo.span2
+    2013 ПРЕССБОЛ-ТУР
+  %ul.span7.nav.nav-pills
+    %li
+      = link_to 'Туры', tours_path
+    %li
+      = link_to 'Визы', visas_path
+    %li
       = link_to 'Туристам', "#"
-    %li.menu-item.disabled
+    %li
       = link_to 'Корпоративным клиентам', "#"
-    %li.menu-item.disabled
+    %li
       = link_to 'Агенствам', "#"
-    %li.menu-item.disabled
+    %li
       = link_to 'О компании', "#"
-    %li.menu-item.disabled
+    %li
       = link_to 'Контакты', "#"
+.row
+  .span2
+  .phone.span3
+    %dl
+      %dd
+        Телефоны:
+      %dd
+        %span.number
+          +375 29
+          %span.bold 127 86 06
+        %span.number
+          +375 29
+          %span.bold 127 86 06
+  .adress.span4
+    %dl
+      %dd
+        Наш офис:
+      %dd
+        = link_to "Республика Беларусь, г. Минск, пер. Тучинский, 2-34", "#"
