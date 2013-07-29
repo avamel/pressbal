@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130726122846) do
+ActiveRecord::Schema.define(version: 20130729080948) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -87,6 +87,27 @@ ActiveRecord::Schema.define(version: 20130726122846) do
     t.datetime "updated_at"
   end
 
+  create_table "static_blocks", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "block_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tour_images", force: true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "tour_id"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tour_images", ["tour_id"], name: "index_tour_images_on_tour_id", using: :btree
+
   create_table "tour_types", force: true do |t|
     t.integer  "type_of_tour_id"
     t.integer  "tour_id"
@@ -109,9 +130,11 @@ ActiveRecord::Schema.define(version: 20130726122846) do
 
   create_table "tours", force: true do |t|
     t.string   "title",                                               null: false
+    t.text     "preview"
     t.text     "overview"
     t.decimal  "price",      precision: 10, scale: 0
     t.boolean  "published",                           default: false
+    t.boolean  "active",                              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

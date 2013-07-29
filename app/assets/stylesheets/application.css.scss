@@ -24,19 +24,22 @@
 
 .top-panel {
   padding: 20px 0 0 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid blue;
 }
 
 .down-panel {
   padding: 20px 0 0 0;
-  border-bottom: 1px solid #000;
+  box-shadow: 1px 1px 3px gray;
 }
 
 .content {
   padding:20px 0 50px 0;
-  border-bottom: 1px solid #000;
+  box-shadow: 1px 1px 3px gray;
 }
 
 .bottom-panel {
-  padding: 20px 0 40px;
+  padding: 20px 0 40px 0;
+}
+.active_tour {
+  border-bottom: 1px solid #000;
 }

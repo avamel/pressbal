@@ -1,0 +1,16 @@
+%table
+  %tr
+    %td.active_right
+      %dl
+        %dt
+          = @home.title
+        %dd
+          = raw @home.content
+    %td.active_left
+      = image_tag(@tour.tour_images.general.image.url(:big))
+      %h3= link_to @tour.title, tour_path(@tour)
+      = raw @tour.preview
+      .price_line
+        %span.price
+          от
+          = number_to_currency(@tour.price, precision: 0)

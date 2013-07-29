@@ -1,2 +1,16 @@
-%h1 Tours#show
-%p Find me in app/views/tours/show.html.haml
+#columns
+  #main
+    %h2= @tour.title
+    - @tour.tour_images.each do |i|
+      = image_tag(i.image.url(:medium))
+    = raw @tour.overview
+    Цена от
+    = number_to_currency(@tour.price, precisions: 0)
+    %p= link_to "Назад", tours_path
+    %h3 Наши предложения
+    = render partial: 'layouts/tours'
+  #side
+    %h3 Популярные виды отдыха
+    = render partial: 'layouts/tour_type'
+    %h3 Новости
+    = render partial: 'layouts/news'

@@ -1,2 +1,14 @@
-%h1 StaticPages#home
-%p Find me in app/views/static_pages/home.html.haml
+.main.active_tour
+  .container
+    = render partial: 'layouts/active_tour'
+#columns
+  #main
+    %h3 Наши предложения
+    = render partial: 'layouts/tours'
+    %br
+    %p= render partial: 'layouts/country'
+  #side
+    %h3 Популярные виды отдыха
+    = render partial: 'layouts/tour_type'
+    %h3 Новости
+    = render partial: 'layouts/news'

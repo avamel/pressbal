@@ -1,0 +1,5 @@
+- @news.each do |news|
+  %p= news.created_at
+  %p= link_to news.title , news_path(news)
+
+%strong= link_to "Архив новостей", news_index_path

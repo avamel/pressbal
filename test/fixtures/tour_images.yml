@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image: 
+  tour_id: 
+  active: false
+
+two:
+  image: 
+  tour_id: 
+  active: false

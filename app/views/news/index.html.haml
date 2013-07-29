@@ -1,2 +1,19 @@
-%h1 News#index
-%p Find me in app/views/news/index.html.haml
+#columns
+  #main
+    %h3 Новости
+    - @news_all.each do |news|
+      %dl
+        %dt
+          = link_to news.title, news_path(news)
+        %dd
+          = truncate(strip_tags(news.content), length: 300)
+        %dd
+          = news.created_at
+  #side
+    %h3 Популярные виды отдыха
+    = render partial: 'layouts/tour_type'
+    %h3 Новости
+    = render partial: 'layouts/news'
+    %br
+    %br
+    %h3 Обратите внимание

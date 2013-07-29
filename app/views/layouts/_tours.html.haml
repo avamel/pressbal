@@ -1,0 +1,8 @@
+- @tours.each do |tour|
+  = image_tag(tour.tour_images.general.image.url(:big))
+  %h4= link_to tour.title, tour_path(tour)
+  %p
+    от
+    = number_to_currency(tour.price, precision:0)
+%strong
+  = link_to "Все предложения", tours_path

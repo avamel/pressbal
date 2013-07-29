@@ -1,0 +1,6 @@
+- @attention.each do |f|
+  = image_tag(f.tour_images.general.image.url(:medium))
+  %h4= link_to f.title, tour_path(f)
+  %p
+    от
+    = number_to_currency(f.price, precision:0)

@@ -1,9 +1,7 @@
 #columns
   #main
-    %h2= @news_item.title
-    %p=  raw @news_item.content
-    %p=  @news_item.created_at
-    %p= link_to "Все новости", news_index_path
+    %h3= @contacts.title
+    = raw @contacts.content
   #side
     %h3 Популярные виды отдыха
     = render partial: 'layouts/tour_type'
@@ -12,3 +10,4 @@
     %br
     %br
     %h3 Обратите внимание
+    = render partial: 'layouts/attention'

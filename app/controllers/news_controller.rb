@@ -1,9 +1,13 @@
 class NewsController < ApplicationController
   def index
-    @news = News.published
+    @news_all = News.published
+    @news = News.last(3)
+    @tour_types = TypeOfTour.all
   end
 
   def show
-    @news = News.find_by(:id)
+    @news_item = News.find params[:id]
+    @news = News.last(3)
+    @tour_types = TypeOfTour.all
   end
 end
