@@ -1,6 +1,4 @@
 .left
-  - if notice
-    = render 'layouts/messages'
   %h1= @tour.title
   - @tour.tour_images.each do |i|
     = image_tag(i.image.url(:medium))
@@ -8,7 +6,6 @@
   Цена от
   = number_to_currency(@tour.price, precisions: 0)
   = link_to "Заказать тур", new_tour_order_path(@tour), :class => 'btn'
-  %h2 Наши предложения
   = render partial: 'layouts/tours'
 .right
   %h2 Менеджер тура

@@ -7,5 +7,10 @@ ActiveAdmin.register Visa do
       f.buttons
     end
   end
-
+  controller do
+    def resource_params
+      return [] if request.get?
+      [params.require(:visa).permit(:title, :overview)]
+    end
+  end
 end
