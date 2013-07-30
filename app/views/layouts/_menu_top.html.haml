@@ -1,18 +1,18 @@
-.row
-  .logo.span2
-    =link_to(image_tag("", alt: 'Press-bal.com'), root_path)
-  %ul.span7.nav.nav-pills
-    %li
-      = link_to 'Туры', tours_path
-    %li
-      = link_to 'Визы', visas_path
-    %li
-      = link_to 'Туристам', for_tourists_path
-    %li
+
+.logo=link_to(image_tag("logo.png", alt: 'Press-bal.com'), root_path)
+.menu
+  %ul
+    %li.menu_item
+      %strong= link_to 'Туры', tours_path
+    %li.menu_item
+      %strong= link_to 'Визы', visas_path
+    %li.menu_item
+      %strong= link_to 'Туристам', for_tourists_path
+    %li.menu_item
       = link_to 'Корпоративным клиентам', for_clients_path
-    %li
+    %li.menu_item
       = link_to 'Агенствам', for_agency_path
-    %li
+    %li.menu_item
       = link_to 'О компании', about_as_path
-    %li
+    %li.menu_item
       = link_to 'Контакты', contacts_path

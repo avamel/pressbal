@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729080948) do
+ActiveRecord::Schema.define(version: 20130729121628) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -63,10 +63,14 @@ ActiveRecord::Schema.define(version: 20130729080948) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "countries", force: true do |t|
-    t.string   "title",      null: false
+    t.string   "title",             null: false
     t.text     "overview"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "flag_file_name"
+    t.string   "flag_content_type"
+    t.integer  "flag_file_size"
+    t.datetime "flag_updated_at"
   end
 
   create_table "country_tours", force: true do |t|
@@ -79,6 +83,14 @@ ActiveRecord::Schema.define(version: 20130729080948) do
   add_index "country_tours", ["country_id"], name: "index_country_tours_on_country_id", using: :btree
   add_index "country_tours", ["tour_id"], name: "index_country_tours_on_tour_id", using: :btree
 
+  create_table "managers", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "news", force: true do |t|
     t.string   "title",                      null: false
     t.text     "content"
@@ -86,6 +98,18 @@ ActiveRecord::Schema.define(version: 20130729080948) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "orders", force: true do |t|
+    t.string   "title"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "notation"
+    t.integer  "tour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["tour_id"], name: "index_orders_on_tour_id", using: :btree
 
   create_table "static_blocks", force: true do |t|
     t.string   "title"
@@ -137,7 +161,10 @@ ActiveRecord::Schema.define(version: 20130729080948) do
     t.boolean  "active",                              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "manager_id"
   end
+
+  add_index "tours", ["manager_id"], name: "index_tours_on_manager_id", using: :btree
 
   create_table "type_of_tours", force: true do |t|
     t.string   "title",      null: false

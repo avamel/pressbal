@@ -1,37 +1,36 @@
-.row
-  .logo.span2
-    2013 ПРЕССБОЛ-ТУР
-  %ul.span7.nav.nav-pills
-    %li
-      = link_to 'Туры', tours_path
-    %li
-      = link_to 'Визы', visas_path
-    %li
-      = link_to 'Туристам', for_tourists_path
-    %li
-      = link_to 'Корпоративным клиентам', for_clients_path
-    %li
-      = link_to 'Агенствам', for_agency_path
-    %li
-      = link_to 'О компании', about_as_path
-    %li
-      = link_to 'Контакты', contacts_path
-.row
-  .span2
-  .phone.span3
+.footer
+  .copy_right
+    © 2013 ПРЕССБОЛ-ТУР
+  .menu_footer
+    %ul
+      %li.menu_item_footer
+        %strong= link_to 'Туры', tours_path
+      %li.menu_item_footer
+        %strong= link_to 'Визы', visas_path
+      %li.menu_item_footer
+        %strong= link_to 'Туристам', for_tourists_path
+      %li.menu_item_footer
+        = link_to 'Корпоративным клиентам', for_clients_path
+      %li.menu_item_footer
+        = link_to 'Агенствам', for_agency_path
+      %li.menu_item_footer
+        = link_to 'О компании', about_as_path
+      %li.menu_item_footer
+        = link_to 'Контакты', contacts_path
+  .phone_footer
     %dl
       %dd
         Телефоны:
-      %dd
-        %span.number
-          +375 29
-          %span.bold 127 86 06
-        %span.number
-          +375 29
-          %span.bold 127 86 06
-  .adress.span4
+      %span.number_footer
+        +375 29
+        %strong 127 86 06
+      %span.number_footer
+        +375 29
+        %strong 127 86 06
+  .adress_footer
     %dl
       %dd
         Наш офис:
-      %dd
-        = link_to "Республика Беларусь, г. Минск, пер. Тучинский, 2-34", "#"
+      %dd.adress_line_footer
+        = link_to "Республика Беларусь, г. Минск, пер. Тучинский, 2-34",
+        "http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map"

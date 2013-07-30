@@ -6,17 +6,20 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %header
-      .main.top-panel
+    .main.top-panel
+      .container
+        = render partial: 'layouts/menu_top'
+    .main.down-panel
+      .container
+        = render partial: 'layouts/menu_bottom'
+    - if params[:controller] == 'static_pages' and params[:action] == 'home'
+      .main.active_panel
         .container
-          = render partial: 'layouts/menu_top'
-      .main.down-panel
-        .container
-          = render partial: 'layouts/menu_bottom'
+          = render partial: 'layouts/active_tour'
+
     .main.content
       .container
-        #wrapper
-          = yield
+        = yield
     %footer
       .main.bottom-panel
         .container

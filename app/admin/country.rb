@@ -13,6 +13,7 @@ ActiveAdmin.register Country do
   form html: {multipart: true} do |f|
     f.inputs do
       f.input :title
+      f.input :flag, as: :file
       f.input :overview, as: :html
       f.buttons
     end
@@ -21,7 +22,7 @@ ActiveAdmin.register Country do
   controller do
     def resource_params
       return [] if request.get?
-      [params.require(:country).permit(:title, :overview)]
+      [params.require(:country).permit(:title, :overview, :flag)]
     end
   end
 

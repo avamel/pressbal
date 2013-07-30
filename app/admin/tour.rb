@@ -45,6 +45,7 @@ ActiveAdmin.register Tour do
       f.input :published, as: :boolean
       f.input :countries, as: :check_boxes
       f.input :type_of_tours, as: :check_boxes
+      f.input :manager
       f.input :preview, as: :html
       f.input :overview, as: :html
       f.input :price
@@ -60,7 +61,7 @@ ActiveAdmin.register Tour do
   controller do
     def resource_params
       return [] if request.get?
-      [params.require(:tour).permit(:title, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
+      [params.require(:tour).permit(:title,:manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
                                     tour_images_attributes: [:id, :active, :image, :_destroy])]
     end
   end

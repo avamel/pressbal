@@ -1,8 +1,11 @@
+.tours_title
+  Наши предложения
 - @tours.each do |tour|
-  = image_tag(tour.tour_images.general.image.url(:big))
-  %h4= link_to tour.title, tour_path(tour)
-  %p
-    от
-    = number_to_currency(tour.price, precision:0)
-%strong
+  .tours_block
+    = image_tag(tour.tour_images.general.image.url(:medium))
+    .tours_block_title= link_to tour.title, tour_path(tour)
+    .tours_price
+      от
+      = number_to_currency(tour.price, precision:0)
+.all_tours
   = link_to "Все предложения", tours_path

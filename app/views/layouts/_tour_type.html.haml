@@ -1,2 +1,6 @@
-- @tour_types.each do |type|
-  %p= link_to type.title, "#"
+.tour_type
+  .tour_type_title
+    Популярные виды отдыха
+  - @tour_types.each do |type|
+    .tour_type_item
+      = link_to type.title,  tours_path(type: type.id)

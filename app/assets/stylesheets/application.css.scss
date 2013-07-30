@@ -9,37 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require style
  */
-@import "bootstrap";
-@import "bootstrap-responsive";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
 
-/*Base CSS*/
-.container {
-  width: 940px;
-  margin: 0 auto;
-}
 
-.top-panel {
-  padding: 20px 0 0 0;
-  border-bottom: 1px solid blue;
-}
 
-.down-panel {
-  padding: 20px 0 0 0;
-  box-shadow: 1px 1px 3px gray;
-}
 
-.content {
-  padding:20px 0 50px 0;
-  box-shadow: 1px 1px 3px gray;
-}
-
-.bottom-panel {
-  padding: 20px 0 40px 0;
-}
-.active_tour {
-  border-bottom: 1px solid #000;
-}

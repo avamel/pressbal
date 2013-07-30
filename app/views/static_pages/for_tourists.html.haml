@@ -1,13 +1,8 @@
-#columns
-  #main
-    %h3= @for_tourists.title
-    = raw @for_tourists.content
-  #side
-    %h3 Популярные виды отдыха
-    = render partial: 'layouts/tour_type'
-    %h3 Новости
-    = render partial: 'layouts/news'
-    %br
-    %br
-    %h3 Обратите внимание
-    = render partial: 'layouts/attention'
+.left
+  = @for_tourists.title
+  = raw @for_tourists.content
+.right
+  = render partial: 'layouts/tour_type'
+  = render partial: 'layouts/news'
+  %h2 Обратите внимание
+  = render partial: 'layouts/attention'

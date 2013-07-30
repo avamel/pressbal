@@ -1,14 +1,10 @@
-#columns
-  #main
-    %h2= @news_item.title
-    %p=  raw @news_item.content
-    %p=  @news_item.created_at
-    %p= link_to "Все новости", news_index_path
-  #side
-    %h3 Популярные виды отдыха
-    = render partial: 'layouts/tour_type'
-    %h3 Новости
-    = render partial: 'layouts/news'
-    %br
-    %br
-    %h3 Обратите внимание
+.left
+  %h1= @news_item.title
+  %p=  raw @news_item.content
+  %p=  @news_item.created_at.strftime("%B %e, %Y")
+  %p= link_to "Все новости", news_index_path
+.right
+  = render partial: 'layouts/tour_type'
+  = render partial: 'layouts/news'
+  %h2 Обратите внимание
+  = render partial: 'layouts/attention'

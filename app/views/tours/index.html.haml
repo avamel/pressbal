@@ -1,18 +1,15 @@
-#columns
-  #main
-    %h3 Наши предложения
-    - @tours.each do |tour|
-      %dl
-        %dd
-          = image_tag(tour.tour_images.general.image.url(:big))
-        %dt
-          = link_to tour.title, tour_path(tour)
-        %dd
-          = raw tour.preview
-          Цена от
-          = number_to_currency(tour.price, precision:0)
-  #side
-    %h3 Популярные виды отдыха
-    = render partial: 'layouts/tour_type'
-    %h3 Новости
-    = render partial: 'layouts/news'
+.left
+  %h1 Наши предложения
+  - @tours.each do |tour|
+    %dl
+      %dd
+        = image_tag(tour.tour_images.general.image.url(:big))
+      %dt
+        = link_to tour.title, tour_path(tour)
+      %dd
+        = raw tour.preview
+        Цена от
+        = number_to_currency(tour.price, precision:0)
+.right
+  = render partial: 'layouts/tour_type'
+  = render partial: 'layouts/news'

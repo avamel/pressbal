@@ -1,5 +1,10 @@
-- @news.each do |news|
-  %p= news.created_at
-  %p= link_to news.title , news_path(news)
-
-%strong= link_to "Архив новостей", news_index_path
+.news
+  .news_title
+    Новости
+  - @news.each do |news|
+    .news_date
+      = news.created_at.strftime("%B %e, %Y")
+    .news_item
+      = link_to news.title , news_path(news)
+  .all_news
+    = link_to "Архив новостей", news_index_path

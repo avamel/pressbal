@@ -1,20 +1,19 @@
-.row
-  .btn-register.span2
-    %a= link_to "Заявка на тур", "#", class: 'btn', remote: true
-  .phone.span3
-    %dl
-      %dd
-        Телефоны:
-      %dd
-        %span.number
-          +375 29
-          %span.bold 127 86 06
-        %span.number
-          +375 29
-          %span.bold 127 86 06
-  .adress.span4
-    %dl
-      %dd
-        Наш офис:
-      %dd
-        = link_to "Республика Беларусь, г. Минск, пер. Тучинский, 2-34", "#"
+.bg
+  = link_to "Заявка на тур", "#"
+.phone
+  %dl
+    %dd
+      Телефоны:
+    %span.number
+      +375 29
+      %strong 127 86 06
+    %span.number
+      +375 29
+      %strong 127 86 06
+.adress
+  %dl
+    %dd
+      Наш офис:
+    %dd.adress_line
+      = link_to "Республика Беларусь, г. Минск, пер. Тучинский, 2-34",
+      "http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map"
