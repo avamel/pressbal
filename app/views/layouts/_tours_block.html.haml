@@ -1,0 +1,9 @@
+.tours-block
+  %h2Наши предложения
+  - @tours.each do |tour|
+    .tours-item
+      = image_tag(tour.tour_images.general.image.url(:medium))
+      %h3= link_to tour.title, tour_path(tour)
+      %span
+        от #{ number_to_currency(tour.price, precision:0)}
+  %p= link_to "Все предложения", tours_path

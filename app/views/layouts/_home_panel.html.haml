@@ -1,0 +1,10 @@
+.home-left
+  = raw @home.content
+.home-right.clearfix
+  .active-left
+    = image_tag(@tour.tour_images.general.image.url(:big))
+  .active-right
+    %h2=link_to @tour.title, tour_path(@tour)
+    %p= @tour.preview
+    %span
+      от #{number_to_currency(@tour.price, precision: 0)}

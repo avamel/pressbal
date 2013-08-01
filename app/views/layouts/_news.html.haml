@@ -1,10 +1,9 @@
 .news
-  .news_title
-    Новости
-  - @news.each do |news|
-    .news_date
-      = news.created_at.strftime("%B %e, %Y")
-    .news_item
-      = link_to news.title , news_path(news)
-  .all_news
-    = link_to "Архив новостей", news_index_path
+  %h2Новости
+  %ul
+    - @news.each do |news|
+      %li
+        %span= news.created_at.strftime("%B %e, %Y")
+        %h3= link_to news.title , news_path(news)
+
+  %p= link_to "Архив новостей", news_index_path

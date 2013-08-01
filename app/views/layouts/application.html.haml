@@ -1,29 +1,27 @@
 !!!
 %html
   %head
-    %title Pressbal
+    %title Pressbal tour
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
     .main.top-panel
-      .container
-        = render partial: 'layouts/menu_top'
+      .container.clearfix
+        = render partial: 'layouts/top_panel'
     .main.down-panel
-      .container
-        = render partial: 'layouts/menu_bottom'
+      .container.clearfix
+        = render partial: 'layouts/down_panel'
     - if params[:controller] == 'static_pages' and params[:action] == 'home'
-      .main.active_panel
-        .container
-          = render partial: 'layouts/active_tour'
-
+      .main.home-panel
+        .container.clearfix
+          = render partial: 'layouts/home_panel'
     .main.content
-      .container
+      .container.clearfix
         .notice
           - if notice
             = render 'layouts/messages'
         = yield
-    %footer
-      .main.bottom-panel
-        .container
-          = render partial: 'layouts/footer'
+    .main.footer-panel
+      .container.clearfix
+        = render partial: 'layouts/footer_panel'

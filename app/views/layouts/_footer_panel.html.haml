@@ -1,0 +1,34 @@
+.copy-right
+  %p &copy; 2013 ПРЕССБОЛ-ТУР
+.footer-menu
+  .footer-nav
+    %ul
+      %li.bold= link_to 'Туры', tours_path
+      %li.bold= link_to 'Визы', visas_path
+      %li.bold= link_to 'Туристам', for_tourists_path
+      %li
+        = link_to 'Корпоративным клиентам', for_clients_path
+      %li
+        = link_to 'Агенствам', for_agency_path
+      %li
+        = link_to 'О компании', about_as_path
+      %li
+        = link_to 'Контакты', contacts_path
+
+  .footer-info.clearfix
+    %dl
+      %dt.phone
+        Телефоны:
+      %dd
+        %span.number
+          +375 29
+          %span.bold 203 55 93
+        %span.number
+          +375 29
+          %span.bold 603 19 34
+    %dl
+      %dt
+        Наш офис:
+      %dd
+        =link_to 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34',
+        'http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map', target: '_blank'

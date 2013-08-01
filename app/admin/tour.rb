@@ -46,7 +46,7 @@ ActiveAdmin.register Tour do
       f.input :countries, as: :check_boxes
       f.input :type_of_tours, as: :check_boxes
       f.input :manager
-      f.input :preview, as: :html
+      f.input :preview
       f.input :overview, as: :html
       f.input :price
       f.has_many :tour_images do |x|

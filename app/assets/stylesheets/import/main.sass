@@ -1,44 +1,52 @@
-.html
+html
   background: white
+body
+  font-family: "Arial"
+  padding: 0!important
+  min-width: 1024px
+  a
+    color: #0e60a0
+    text-decoration: underline
+    //text-decoration: none
+    //border-bottom: 1px solid #0e60a0
 
+.bold
+  font-weight: bold
 .notice
   text-align: center
   width: 640px
   margin-left: 120px
 .container
-  width: 1200px
+  width: 960px
   margin: 0 auto
+  padding: 0 32px
 
 .top-panel
-  width: 1400px
-  height: 82px
+  height: 84px
   border-bottom: 1px solid #d4e2ee
-
-.logo
-  width: 141px
-  height: 76px
-  margin: -5px 0px 0px 126px
-
-.menu
-  font-size: 16px
-  font-family: "Arial"
-  //font-weight: bold
-  margin: -40px 0 0 306px
-
-
-.menu_item
-  display: inline-block
-  padding-right: 18px
-  a
-    color: rgb(14, 96, 160)
-    text-decoration:  underline
+  ul
+    float: left
+    font-size: 16px
+    margin: 31px 0px 0px 77px
+    li
+      margin-right: 24px
+      float: left
+      display: inline-block
+    li:last-child
+      margin: 0
+  .logo
+    float: left
+    padding: 8px 0
+    margin: 0px 0px 0px 6px
 
 .down-panel
-  width: 1400px
-  height: 80px
+  height: 75px
   box-shadow: 1px 1px 6px #d4e2ee
 
-.bg
+
+
+.button
+  float: left
   border-style: solid
   border-width: 1px
   border-color: rgb(86, 131, 166)
@@ -46,263 +54,454 @@
   background-image: -moz-linear-gradient(90deg, rgb(76, 138, 186) 0%, rgb(143, 190, 226) 100%)
   background-image: -webkit-linear-gradient(90deg, rgb(76, 138, 186) 0%, rgb(143, 190, 226) 100%)
   background-image: -ms-linear-gradient(90deg, rgb(76, 138, 186) 0%, rgb(143, 190, 226) 100%)
-  position: absolute
-  margin-left: 120px
-  margin-top: 18px
   width: 141px
   height: 40px
   text-align: center
   line-height: 40px
-
+  margin-top: 15px
   a
     font-size: 16px
-    font-family: "Arial"
-    color: rgb(255, 255, 255)
-    font-weight: bold
-.phone
-  font-size: 13px
-  font-family: "Arial"
-  color: rgb( 131, 131, 131 )
-  margin: 15px 0px 0px 322px
-  width: 300px
+    color: #ffffff
+    text-decoration: none
+
+
+
+.info
+  float: left
+  margin-left: 59px
+  dl
+    float: left
+    display: inline-block
+    max-width: 400px
+    overflow: hidden
+    padding-right: 29px
+    dt
+      font-size: 13px
+      color: #838383
+      font-weight: normal
+    .phone
+      margin-left: 10px
+    dd
+      margin: 0
+      font-size: 15px
+  dl:last-child
+    margin-right: 0px
+
 .number
-  font-size: 15px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-  width: 268px
-  padding-right: 12px
-
-.adress
-  margin: -60px 0px 0px 623px
-  font-size: 13px
-  font-family: "Arial"
-  color: rgb( 131, 131, 131 )
-  width: 400px
-//margin-left: 631px
-.adress_line
-  font-size: 15px
-  font-family: "Arial"
-  width: 400px
-  height: 15px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-
-
-.active_panel
-  height: 341px
-  background-image: url("/assets/bg-active.png")
-  width: 1400px
-
-.active_text
-  font-size: 15px
-  font-family: "Arial"
-  color: rgb(0, 0, 0)
-  line-height: 1.333
-  margin: 45px 0px 0px 120px
-  width: 357px
-  height: 275px
-.active_content
-  height: 275px
-  overflow: auto
-
-//.active_title
-//  font-weight: bold !important
-
-.active_right
-  background-color: white
+  margin-right: 13px
+.home-panel
+  padding: 34px 0px
+  background-color: #e9f1f6
+  background-image: url("/assets/bg-home-panel.png")
+  background-repeat: repeat-x
+.home-left
+  float: left
+  width: 361px
+  padding: 12px 39px 12px 0px
+.home-right
+  float: left
   width: 560px
-  height: 272px
-  margin: -288px 0 0 521px
+  background-color: #ffffff
   box-shadow: 0 0 5px gray
-
-.right_title
-  font-size: 27px
-  font-family: "Arial"
-  margin: -241px 0px 0px 300px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-.right_content
-  font-size: 13px
-  font-family: "Arial"
-  color: rgb( 98, 98, 98 )
-  line-height: 1.231
-  margin: 20px 0 0 302px
-  width: 213px
-  max-height: 140px
-.price
-  font-size: 20px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-  margin: 23px 0 0 303px
-.content
-  width: 1400px
-  height: auto
-  padding-bottom: 60px
-.left
+.active-left
   float: left
-  margin-left: 120px
-  width: 640px
-.right
-  float: right
-  width: 320px
-  margin-right: 120px
-//.tour_offers
-
-.tours_title
-  font-size: 16px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-  font-weight: bold
-  margin-top: 28px
-
-.tours_block
-  display: inline-block
   width: 282px
-  height: 234px
-  margin-top: 25px
-  padding-right: 28px
 
-.tours_block_title
-  font-size: 16px
-  font-family: "Arial"
-  font-weight: bold
-  margin-top: 12px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-.tours_price
-  font-size: 16px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-.all_tours
-  font-size: 16px
-  font-family: "Arial"
-  margin-top: 30px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-.country
-  margin-top: 51px
-.country_block
-  display: inline-block
-  min-width: 137px
-  width: auto
-.flag
+.active-right
   float: left
-  width: 24px
-  height: 16px
-.flag_title
-  //width: 65px
-  //float: right
-  font-size: 16px
-  font-family: "Arial"
-  font-weight: bold
-  line-height: 2.25
-  margin: -7px 0px 8px 32px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-//.tour_type
-.tour_type_title
-  font-size: 16px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-  font-weight: bold
-  width: 221px
-  margin-top: 28px
-.tour_type_item
-  font-size: 16px
-  font-family: "Arial"
-  margin: 19px 0px -8px 0px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-
-//.news
-.news_title
-  margin-top: 46px
-  font-size: 16px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-  font-weight: bold
-.news_date
-  margin: 18px 0px 3px 3px
-  font-size: 14px
-  font-family: "Arial"
-  color: rgb( 167, 167, 167 )
-.news_item
-  margin-top: 4px
-  font-size: 14px
-  font-family: "Arial"
-  line-height: 20px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-
-.all_news
-  margin-top: 20px
-  font-size: 14px
-  font-family: "Arial"
-  font-weight: bold
-  line-height: 1.286
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
-.bottom-panel
-  background-image: url("/assets/bg-footer.png")
-  width: 1400px
-  height: 205px
-
-.footer
-  margin-top: 43px
-
-.copy_right
-  margin: 0 0 0 122px
-  width: 177px
-  font-size: 15px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-
-
-.menu_footer
-  font-size: 16px
-  font-family: "Arial"
-  //font-weight: bold
-  margin: -21px 0 0 310px
-  a
-    color: #595959
-    text-decoration: underline
-
-.menu_item_footer
+  width: 238px
+  padding: 20px
+  h2
+    font-size: 27px
+    margin: 0 0 11px
+  p
+    font-size: 13px
+    color: #626262
+    line-height: 1.231
+    margin: 0 0 21px
+  span
+    font-size: 20px
+.content
+  padding: 36px 0
+.left
+  width: 640px
+  float: left
+.tours-block
+  h2
+    font-size: 16px
+    margin: 0
+    line-height: 10px
+    padding-bottom: 31px
+  p
+    font-size: 16px
+    padding-top: 4px
+    margin: 0
+  h3
+    font-size: 16px
+    margin: 0
+    line-height: 24px
+    margin-top: 9px
+  span
+    font-size: 16px
+    line-height: 3px
+  padding-bottom: 52px
+.tours-block:last-child
+  padding-bottom: 36px
+.tours-item
+  width: 282px
   display: inline-block
-  padding-right: 19px
-.phone_footer
-  font-size: 13px
-  font-family: "Arial"
-  color: rgb( 131, 131, 131 )
-  margin: 29px 0px 0px  327px
-  width: 300px
-.number_footer
-  font-size: 15px
-  font-family: "Arial"
-  color: rgb( 0, 0, 0 )
-  width: 268px
-  padding-right: 13px
+  margin-right: 28px
+  margin-bottom: 28px
+
+.right
+  float: left
+  width: 320px
+  //padding-top: 36px
+.country-block
+  padding-bottom: 26px
+  ul
+    margin: 0
+    li
+      font-weight: bold
+      margin-right: 36px
+      margin-bottom: 16px
+      display: inline-block
+      img
+        margin-right: 5px
+      a
+        font-size: 16px
+.tour-type
+  width: 291px
+  h2
+    margin: 0
+    font-size: 16px
+    line-height: 10px
+    padding-bottom: 19px
+  ul
+    margin: 0
+    li
+      list-style-type: none
+      line-height: 30px
+      a
+        font-size: 16px
+  padding-bottom: 40px
+
+.news
+  width: 291px
+  h2
+    margin: 0
+    font-size: 16px
+    line-height: 10px
+    padding-bottom: 25px
+  ul
+    padding: 0
+    margin: 0
+    li
+      list-style-type: none
+      span
+        font-size: 14px
+        color: #a7a7a7
+      h3
+        font-size: 14px
+        font-weight: normal
+        line-height: 18px
+        margin-top: 0
+        margin-bottom: 22px
+  p
+    font-weight: bold
+.footer-panel
+  background-image: url("/assets/bg-footer.png")
+  background-repeat: repeat-x
+  padding: 39px 0
+  background-color: #f0f0f0
+.copy-right
+  float: left
+  width: 177px
+  p
+    font-size: 15px
+.footer-menu
+  float: left
+  width: 783px
+.footer-nav
+  ul
+    font-size: 16px
+    margin: 0px 0px 0px 36px
+    li
+      margin-right: 24px
+      float: left
+      display: inline-block
+      a
+        color: #595959
+    li:last-child
+      margin: 0
+.footer-info
+  dl
+    float: left
+    padding-top: 13px
+    max-width: 400px
+    overflow: hidden
+    padding-left: 28px
+
+    dt
+      font-size: 13px
+      color: #838383
+      font-weight: normal
+    .phone
+      margin-left: 10px
+    dd
+      margin: 0
+      font-size: 15px
 
 
-.adress_footer
-  margin: -61px 0px 0px 625px
-  font-size: 13px
-  font-family: "Arial"
-  color: rgb( 131, 131, 131 )
-  width: 400px
-.adress_line_footer
-  font-size: 15px
-  font-family: "Arial"
-  width: 400px
-  height: 15px
-  a
-    color: rgb( 14, 96, 160 )
-    text-decoration: underline
+
+
+
+
+
+
+//
+//  a
+//    font-size: 16px
+//    font-family: "Arial"
+//    color: rgb(255, 255, 255)
+//    font-weight: bold
+//.phone
+//  font-size: 13px
+//  font-family: "Arial"
+//  color: rgb( 131, 131, 131 )
+//  margin: 15px 0px 0px 322px
+//  width: 300px
+//.number
+//  font-size: 15px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//  width: 268px
+//  padding-right: 12px
+//
+//.adress
+//  margin: -60px 0px 0px 623px
+//  font-size: 13px
+//  font-family: "Arial"
+//  color: rgb( 131, 131, 131 )
+//  width: 400px
+////margin-left: 631px
+//.adress_line
+//  font-size: 15px
+//  font-family: "Arial"
+//  width: 400px
+//  height: 15px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//
+//
+//.active_panel
+//  height: 341px
+//  background-image: url("/assets/bg-active.png")
+//  width: 1400px
+//
+//.active_text
+//  font-size: 15px
+//  font-family: "Arial"
+//  color: rgb(0, 0, 0)
+//  line-height: 1.333
+//  margin: 45px 0px 0px 120px
+//  width: 357px
+//  height: 275px
+//.active_content
+//  height: 275px
+//  overflow: auto
+//
+////.active_title
+////  font-weight: bold !important
+//
+//.active_right
+//  background-color: white
+//  width: 560px
+//  height: 272px
+//  margin: -288px 0 0 521px
+//  box-shadow: 0 0 5px gray
+//
+//.right_title
+//  font-size: 27px
+//  font-family: "Arial"
+//  margin: -241px 0px 0px 300px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//.right_content
+//  font-size: 13px
+//  font-family: "Arial"
+//  color: rgb( 98, 98, 98 )
+//  line-height: 1.231
+//  margin: 20px 0 0 302px
+//  width: 213px
+//  max-height: 140px
+//.price
+//  font-size: 20px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//  margin: 23px 0 0 303px
+//.content
+//  width: 1400px
+//  height: auto
+//  padding-bottom: 60px
+//
+////.tour_offers
+//
+//.tours_title
+//  font-size: 16px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//  font-weight: bold
+//  margin-top: 28px
+//
+//.tours_block
+//  display: inline-block
+//  width: 282px
+//  height: 234px
+//  margin-top: 25px
+//  padding-right: 28px
+//
+//.tours_block_title
+//  font-size: 16px
+//  font-family: "Arial"
+//  font-weight: bold
+//  margin-top: 12px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//.tours_price
+//  font-size: 16px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//.all_tours
+//  font-size: 16px
+//  font-family: "Arial"
+//  margin-top: 30px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//.country
+//  margin-top: 51px
+//.country_block
+//  display: inline-block
+//  min-width: 137px
+//  width: auto
+//.flag
+//  float: left
+//  width: 24px
+//  height: 16px
+//.flag_title
+//  //width: 65px
+//  //float: right
+//  font-size: 16px
+//  font-family: "Arial"
+//  font-weight: bold
+//  line-height: 2.25
+//  margin: -7px 0px 8px 32px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+////.tour_type
+//.tour_type_title
+//  font-size: 16px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//  font-weight: bold
+//  width: 221px
+//  margin-top: 28px
+//.tour_type_item
+//  font-size: 16px
+//  font-family: "Arial"
+//  margin: 19px 0px -8px 0px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//
+////.news
+//.news_title
+//  margin-top: 46px
+//  font-size: 16px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//  font-weight: bold
+//.news_date
+//  margin: 18px 0px 3px 3px
+//  font-size: 14px
+//  font-family: "Arial"
+//  color: rgb( 167, 167, 167 )
+//.news_item
+//  margin-top: 4px
+//  font-size: 14px
+//  font-family: "Arial"
+//  line-height: 20px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//
+//.all_news
+//  margin-top: 20px
+//  font-size: 14px
+//  font-family: "Arial"
+//  font-weight: bold
+//  line-height: 1.286
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline
+//.bottom-panel
+//  background-image: url("/assets/bg-footer.png")
+//  width: 1400px
+//  height: 205px
+//
+//.footer
+//  margin-top: 43px
+//
+//.copy_right
+//  margin: 0 0 0 122px
+//  width: 177px
+//  font-size: 15px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//
+//
+//.menu_footer
+//  font-size: 16px
+//  font-family: "Arial"
+//  //font-weight: bold
+//  margin: -21px 0 0 310px
+//  a
+//    color: #595959
+//    text-decoration: underline
+//
+//.menu_item_footer
+//  display: inline-block
+//  padding-right: 19px
+//.phone_footer
+//  font-size: 13px
+//  font-family: "Arial"
+//  color: rgb( 131, 131, 131 )
+//  margin: 29px 0px 0px  327px
+//  width: 300px
+//.number_footer
+//  font-size: 15px
+//  font-family: "Arial"
+//  color: rgb( 0, 0, 0 )
+//  width: 268px
+//  padding-right: 13px
+//
+//
+//.adress_footer
+//  margin: -61px 0px 0px 625px
+//  font-size: 13px
+//  font-family: "Arial"
+//  color: rgb( 131, 131, 131 )
+//  width: 400px
+//.adress_line_footer
+//  font-size: 15px
+//  font-family: "Arial"
+//  width: 400px
+//  height: 15px
+//  a
+//    color: rgb( 14, 96, 160 )
+//    text-decoration: underline

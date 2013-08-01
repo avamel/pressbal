@@ -1,6 +1,5 @@
-.tour_type
-  .tour_type_title
-    Популярные виды отдыха
-  - @tour_types.each do |type|
-    .tour_type_item
-      = link_to type.title,  tours_path(type: type.id)
+.tour-type
+  %h2Популярные виды отдыха
+  %ul
+    - @tour_types.each do |type|
+      %li= link_to type.title,  tours_path(type: type.id)

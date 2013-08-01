@@ -1,6 +1,6 @@
-- @countries.each do |country|
-  .country_block
-    .flag
-      = image_tag(country.flag.url(:small))
-    .flag_title
-      = link_to country.title, tours_path(country: country.id)
+.country-block
+  %ul
+    - @countries.each do |country|
+      %li
+        = image_tag(country.flag.url(:small))
+        = link_to country.title, tours_path(country: country.id)

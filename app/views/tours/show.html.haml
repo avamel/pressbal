@@ -6,7 +6,7 @@
   Цена от
   = number_to_currency(@tour.price, precisions: 0)
   = link_to "Заказать тур", new_tour_order_path(@tour), :class => 'btn'
-  = render partial: 'layouts/tours'
+  = render partial: 'layouts/tours_block'
 .right
   %h2 Менеджер тура
   = render partial: 'layouts/manager'
