@@ -7,7 +7,7 @@
       %dd
         = truncate(strip_tags(news.content), length: 300)
       %dd
-        = news.created_at.strftime("%B %e, %Y")
+        = Russian::strftime(news.created_at, "%e %B %Y")
 .right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

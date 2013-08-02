@@ -1,7 +1,7 @@
 .left
   %h1= @news_item.title
   %p=  raw @news_item.content
-  %p=  @news_item.created_at.strftime("%B %e, %Y")
+  %p=  Russian::strftime(@news_item.created_at, "%e %B %Y")
   %p= link_to "Все новости", news_index_path
 .right
   = render partial: 'layouts/tour_type'

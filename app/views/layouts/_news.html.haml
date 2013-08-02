@@ -3,7 +3,7 @@
   %ul
     - @news.each do |news|
       %li
-        %span= news.created_at.strftime("%B %e, %Y")
+        %span= Russian::strftime(news.created_at, "%e %B %Y")
         %h3= link_to news.title , news_path(news)
 
   %p= link_to "Архив новостей", news_index_path
