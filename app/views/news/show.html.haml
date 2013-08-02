@@ -1,10 +1,10 @@
-.left
-  %h1= @news_item.title
-  %p=  raw @news_item.content
-  %p=  Russian::strftime(@news_item.created_at, "%e %B %Y")
-  %p= link_to "Все новости", news_index_path
-.right
+.left.static-page-left
+  .static-content
+    %h3= @news_item.title
+    %p=  raw @news_item.content
+    %p=  Russian::strftime(@news_item.created_at, "%e %B %Y")
+    %p= link_to "Все новости", news_index_path
+.right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'
-  %h2 Обратите внимание
   = render partial: 'layouts/attention'

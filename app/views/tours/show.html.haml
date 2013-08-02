@@ -1,14 +1,13 @@
 .left
-  %h1= @tour.title
-  - @tour.tour_images.each do |i|
-    = image_tag(i.image.url(:medium))
-  = raw @tour.overview
-  Цена от
-  = number_to_currency(@tour.price, precisions: 0)
-  = link_to "Заказать тур", new_tour_order_path(@tour), :class => 'btn'
+  .show-tour
+    %h1= @tour.title
+    - @tour.tour_images.each do |i|
+      = image_tag(i.image.url(:medium))
+    = raw @tour.overview
+    %span Цена от #{number_to_currency(@tour.price, precisions: 0)}
+    = link_to "Заказать тур", new_tour_order_path(@tour), :class => 'btn'
   = render partial: 'layouts/tours_block'
-.right
-  %h2 Менеджер тура
+.right.show-tour-right
   = render partial: 'layouts/manager'
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

@@ -1,8 +1,8 @@
-.left
-  %h1= @for_tourists.title
-  = raw @for_tourists.content
-.right
+.left.static-page-left
+  .static-content
+    %h1= @for_tourists.title
+    = raw @for_tourists.content
+.right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'
-  %h2 Обратите внимание
   = render partial: 'layouts/attention'

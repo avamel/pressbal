@@ -1,6 +1,9 @@
-- @attention.each do |f|
-  = image_tag(f.tour_images.general.image.url(:medium))
-  %h4= link_to f.title, tour_path(f)
-  %p
-    от
-    = number_to_currency(f.price, precision:0)
+.attention
+  %h2 Обратите внимание
+  - @attention.each do |f|
+    .attention-item.clearfix
+      = image_tag(f.tour_images.general.image.url(:small))
+      .attention-info
+        %h3= link_to f.title, tour_path(f)
+        %span
+          от #{number_to_currency(f.price, precision:0)}

@@ -1,15 +1,15 @@
-.left
-  %h4 Новости
-  - @news_all.each do |news|
-    %dl
-      %dt
-        = link_to news.title, news_path(news)
-      %dd
-        = truncate(strip_tags(news.content), length: 300)
-      %dd
-        = Russian::strftime(news.created_at, "%e %B %Y")
-.right
+.left.static-page-left
+  .static-content
+    %h1 Новости
+    - @news_all.each do |news|
+      %dl
+        %dt
+          = link_to news.title, news_path(news)
+        %dd
+          = truncate(strip_tags(news.content), length: 300)
+        %dd
+          = Russian::strftime(news.created_at, "%e %B %Y")
+.right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'
-  %h2 Обратите внимание
   = render partial: 'layouts/attention'

@@ -156,6 +156,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.0)
+      rails
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
@@ -236,6 +238,7 @@ DEPENDENCIES
   inherited_resources!
   jbuilder (~> 1.2)
   jquery-rails
+  masonry-rails
   mysql2
   paperclip!
   rails (= 4.0.0)

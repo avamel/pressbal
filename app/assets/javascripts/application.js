@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-// Loads all Bootstrap javascripts
-//= require bootstrap
-//= require turbolinks
-//= require_tree .
+//= require_tree ./import
+
+$(document).ready(function(){
+    $('.masonry-block').masonry({
+        itemSelector: '.tours-item'
+    });
+});
+

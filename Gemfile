@@ -47,6 +47,7 @@ gem 'paperclip',           github: 'thoughtbot/paperclip', branch: 'rails-4'
 
 gem 'bootstrap-sass'
 gem 'russian'
+gem 'masonry-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

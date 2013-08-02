@@ -1,8 +1,8 @@
-.left
-  %h1= @visa.title
-  = raw @visa.overview
-.right
+.left.static-page-left
+  .static-content
+    %h1= @visa.title
+    = raw @visa.overview
+.right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'
-  %h3 Обратите внимание
   = render partial: 'layouts/attention'
