@@ -13,10 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./import
+//= require masonry/jquery.imagesloaded.min
 
-$(document).ready(function(){
-    $('.masonry-block').masonry({
-        itemSelector: '.tours-item'
+$(function(){
+    var $container = $('.masonry-block');
+    $container.imagesLoaded( function() {
+        $container.masonry({
+            itemSelector: '.tours-item'
+        });
     });
 });
 

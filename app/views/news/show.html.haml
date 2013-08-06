@@ -1,7 +1,7 @@
 .left.static-page-left
   .static-content.news-show
     - if @news_item.present?
-      %h2= @news_item.title
+      %h1= @news_item.title
       %p=  raw @news_item.content
       %p.news-date=  Russian::strftime(@news_item.created_at, "%e %B %Y")
       = render partial: 'layouts/share'
