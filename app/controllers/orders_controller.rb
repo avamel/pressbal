@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def new
-    @news = News.last(3)
+    @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.order("RAND()").take(3)
     @tour = Tour.find params[:tour_id]
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @news = News.last(3)
+    @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.order("RAND()").take(3)
     @tour = Tour.find params[:tour_id]

@@ -1,13 +1,13 @@
 class RequestsController < ApplicationController
   def new
-    @news = News.last(3)
+    @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.order("RAND()").take(3)
     @request = Request.new
   end
 
   def create
-    @news = News.last(3)
+    @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.order("RAND()").take(3)
     @request = Request.new request_params

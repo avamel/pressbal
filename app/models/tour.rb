@@ -19,7 +19,7 @@ class Tour < ActiveRecord::Base
   after_save :last_active, if: -> tour {tour.active}
 
   def should_generate_new_friendly_id?
-    new_record? || slug.blank? || update_record?
+    new_record? || slug.blank?
   end
 
   def normalize_friendly_id(text)
