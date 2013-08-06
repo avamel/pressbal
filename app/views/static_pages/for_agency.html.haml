@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content
-    - unless @for_agency.nil?
+    - if @for_agency.present?
       %h1= @for_agency.title
       = raw @for_agency.content
       = render partial: 'layouts/share'

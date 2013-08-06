@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content
-    - unless @for_clients.nil?
+    - if @for_clients.present?
       %h1= @for_clients.title
       = raw @for_clients.content
       = render partial: 'layouts/share'

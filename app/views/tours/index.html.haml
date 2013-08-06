@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content
-    - unless @tours.nil?
+    - if @tours.present?
       %h1 Наши предложения
       - @tours.each do |tour|
         .all-tour.clearfix

@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content
-    - unless @about_as.nil?
+    - if @about_as.present?
       %h1= @about_as.title
       = raw @about_as.content
       = render partial: 'layouts/share'

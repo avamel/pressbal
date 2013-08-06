@@ -1,8 +1,8 @@
 .home-left
-  - unless @home.nil?
+  - if @home.present?
     = raw @home.content
 .home-right.clearfix
-  - unless @tour.nil?
+  - if @tour.present?
     .active-left
       = image_tag(@tour.tour_images.general.image.url(:big))
     .active-right

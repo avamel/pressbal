@@ -1,4 +1,4 @@
-- unless @attention.nil?
+- if @attention.present?
   .attention
     %h2 Обратите внимание
     - @attention.each do |f|

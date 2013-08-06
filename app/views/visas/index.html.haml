@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content.visas
-    - unless @visas.nil?
+    - if @visas.present?
       %h1 Визы
       - @visas.each do |visa|
         %ul

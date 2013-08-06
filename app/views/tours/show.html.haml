@@ -1,6 +1,6 @@
 .left.show-tour-left
   .show-tour
-    - unless @tour.nil?
+    - if @tour.present?
       %h1= @tour.title
       .tour-info
         .fotorama{'data-loop'=>"true", 'data-nav'=>"none", 'data-width'=>"560", 'data-height'=>"272"}

@@ -1,4 +1,4 @@
-- unless @manager.nil?
+- if @manager.present?
   .manager
     %h2 Менеджер тура
     %p= @manager.name

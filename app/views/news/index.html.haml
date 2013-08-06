@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content
-    - unless @news_all.nil?
+    - if @news_all.present?
       %h1 Новости
       - @news_all.each do |news|
         .all-news

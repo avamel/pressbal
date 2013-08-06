@@ -1,4 +1,4 @@
-- unless @countries.nil?
+- if @countries.present?
   .country-block
     %ul
       - @countries.each do |country|

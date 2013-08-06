@@ -14,4 +14,10 @@ class ToursController < ApplicationController
     @tours = Tour.published.order("RAND()").take(4)
     @manager = @tour.manager
   end
+  #joins(:type_of_tours).where('type_of_tour_ids LIKE ?', @tour.type_of_tours)
+  # private
+  #def resource_params
+  #  return [] if request.get?
+  #  [params.require(:tour).permit(:type_of_tour_ids)]
+  #end
 end

@@ -1,6 +1,6 @@
 .left.static-page-left
   .static-content.visas
-    - unless @visa.nil?
+    - if @visa.present?
       %h1= @visa.title
       = raw @visa.overview
       = render partial: 'layouts/share'
