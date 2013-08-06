@@ -1,7 +1,7 @@
 ActiveAdmin.register Request do
   menu priority: 2
 
-  show do |order|
+  show do
     attributes_table do
       row :name
       row :phone

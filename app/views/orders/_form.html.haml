@@ -1,22 +1,37 @@
-= form_for [@tour, @order] do |f|
+= simple_form_for [@tour, @order] do |f|
   - if @order.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@order.errors.count, "error")} prohibited this article from being saved:"
-      %ul
-        - @order.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :phone_field
-    = f.phone_field :phone
-  .field
-    = f.label :email_field
-    = f.email_field :email
-  .field
-    = f.label :notation
-    = f.text_area :notation
+      %h2= 'При заполнении формы возникли ошибки!'
+  .form-inputs
+    = f.input :name, placeholder: 'Ваше имя', label: 'Ваше имя:'
+    = f.input :phone, placeholder: '+375 29 203 55 93',label: 'Ваш номер телефон:'
+    = f.input :email, placeholder: 'Email', label: 'Email'
+    = f.input :notation, as: :text, placeholder: 'дата тура и любая другая информация', label: 'Примечание:'
   .actions
-    = f.submit 'Save'
+    = f.button :submit, value: 'Заказать тур', class: 'order-button'
+
+
+
+
+-#= form_for [@tour, @order] do |f|
+-#  - if @order.errors.any?
+-#    #error_explanation
+-#      %h2= "Произошли следующие ошибки:"
+-#      %ul
+-#        - @order.errors.full_messages.each do |msg|
+-#          %li= msg
+-#
+-#  .field
+-#    = f.label "Ваше имя:"
+-#    = f.text_field :name
+-#  .field
+-#    = f.label "Ваш номер телефона:"
+-#    = f.phone_field :phone
+-#  .field
+-#    = f.label "Ваш электронный адрес:"
+-#    = f.email_field :email
+-#  .field
+-#    = f.label "Примечание:"
+-#    = f.text_area :notation
+-#  .actions
+-#    = f.submit 'Офотмить заказ'

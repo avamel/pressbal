@@ -3,17 +3,17 @@
 .footer-menu
   .footer-nav
     %ul
-      %li.bold= link_to 'Туры', tours_path
-      %li.bold= link_to 'Визы', visas_path
-      %li.bold= link_to 'Туристам', for_tourists_path
+      %li.bold= link_to 'Туры', tours_path, title: 'Туры'
+      %li.bold= link_to 'Визы', visas_path, title: 'Визы'
+      %li.bold= link_to 'Туристам', for_tourists_path, title: 'Туристам'
       %li
-        = link_to 'Корпоративным клиентам', for_clients_path
+        = link_to 'Корпоративным клиентам', for_clients_path, title: 'Корпоративным клиентам'
       %li
-        = link_to 'Агенствам', for_agency_path
+        = link_to 'Агенствам', for_agency_path, title: 'Агенствам'
       %li
-        = link_to 'О компании', about_as_path
+        = link_to 'О компании', about_as_path, title: 'О компании'
       %li
-        = link_to 'Контакты', contacts_path
+        = link_to 'Контакты', contacts_path, title: 'Контакты'
 
   .footer-info.clearfix
     %dl
@@ -31,4 +31,5 @@
         Наш офис:
       %dd
         =link_to 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34',
-        'http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map', target: '_blank'
+        'http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map', target: '_blank',
+        title: 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34'

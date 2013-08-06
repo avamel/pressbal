@@ -11,7 +11,7 @@ class ToursController < ApplicationController
     @tour = Tour.find params[:id]
     @news = News.last(3)
     @tour_types = TypeOfTour.all
-    @tours = Tour.published.take(4)
+    @tours = Tour.published.order("RAND()").take(4)
     @manager = @tour.manager
   end
 end

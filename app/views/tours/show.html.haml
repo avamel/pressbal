@@ -1,12 +1,17 @@
-.left
+.left.show-tour-left
   .show-tour
-    %h1= @tour.title
-    - @tour.tour_images.each do |i|
-      = image_tag(i.image.url(:medium))
-    = raw @tour.overview
-    %span Цена от #{number_to_currency(@tour.price, precisions: 0)}
-    = link_to "Заказать тур", new_tour_order_path(@tour), :class => 'btn'
-  = render partial: 'layouts/tours_block'
+    - unless @tour.nil?
+      %h1= @tour.title
+      .tour-info
+        .fotorama{'data-loop'=>"true", 'data-nav'=>"none", 'data-width'=>"560", 'data-height'=>"272"}
+          - @tour.tour_images.each do |i|
+            = image_tag(i.image.url(:wbig))
+        %span Стоимость тура: от #{number_to_currency(@tour.price, precision: 0)}
+        .tour-button
+          = link_to "Заказать", new_tour_order_path(@tour), title: "Заказать тур"
+      = raw @tour.overview
+      = render partial: 'layouts/share'
+  = render partial: 'layouts/similar_tours_block'
 .right.show-tour-right
   = render partial: 'layouts/manager'
   = render partial: 'layouts/tour_type'

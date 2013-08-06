@@ -1,14 +1,16 @@
 .left.static-page-left
   .static-content
-    %h1 Новости
-    - @news_all.each do |news|
-      %dl
-        %dt
-          = link_to news.title, news_path(news)
-        %dd
-          = truncate(strip_tags(news.content), length: 300)
-        %dd
-          = Russian::strftime(news.created_at, "%e %B %Y")
+    - unless @news_all.nil?
+      %h1 Новости
+      - @news_all.each do |news|
+        .all-news
+          %dl
+            %dt
+              = link_to news.title, news_path(news), title: "#{news.title}"
+            %dd
+              = truncate(strip_tags(news.content), length: 300)
+            %dd.news-date
+              %span= Russian::strftime(news.created_at, "%e %B %Y")
 .right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

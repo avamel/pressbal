@@ -3,7 +3,7 @@ ActiveAdmin.register Order do
 
   show do |order|
     attributes_table do
-      row :title
+      row :name
       row :phone
       row :email
       row :notation
@@ -13,7 +13,7 @@ ActiveAdmin.register Order do
   controller do
     def resource_params
       return [] if request.get?
-      [params.require(:order).permit(:title, :phone, :email, :notation)]
+      [params.require(:order).permit(:name, :phone, :email, :notation)]
     end
   end
 end

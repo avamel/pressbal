@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130730153453) do
+ActiveRecord::Schema.define(version: 20130806064448) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -63,15 +63,14 @@ ActiveRecord::Schema.define(version: 20130730153453) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "countries", force: true do |t|
-    t.string   "title",             null: false
+    t.string   "title",      null: false
     t.text     "overview"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "flag_file_name"
-    t.string   "flag_content_type"
-    t.integer  "flag_file_size"
-    t.datetime "flag_updated_at"
+    t.string   "slug"
   end
+
+  add_index "countries", ["slug"], name: "index_countries_on_slug", using: :btree
 
   create_table "country_tours", force: true do |t|
     t.integer  "country_id"
@@ -82,6 +81,19 @@ ActiveRecord::Schema.define(version: 20130730153453) do
 
   add_index "country_tours", ["country_id"], name: "index_country_tours_on_country_id", using: :btree
   add_index "country_tours", ["tour_id"], name: "index_country_tours_on_tour_id", using: :btree
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "managers", force: true do |t|
     t.string   "name"
@@ -97,10 +109,13 @@ ActiveRecord::Schema.define(version: 20130730153453) do
     t.boolean  "published",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
+  add_index "news", ["slug"], name: "index_news_on_slug", using: :btree
+
   create_table "orders", force: true do |t|
-    t.string   "title"
+    t.string   "name"
     t.string   "phone"
     t.string   "email"
     t.text     "notation"
@@ -171,21 +186,29 @@ ActiveRecord::Schema.define(version: 20130730153453) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "manager_id"
+    t.string   "slug"
   end
 
   add_index "tours", ["manager_id"], name: "index_tours_on_manager_id", using: :btree
+  add_index "tours", ["slug"], name: "index_tours_on_slug", using: :btree
 
   create_table "type_of_tours", force: true do |t|
     t.string   "title",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "type_of_tours", ["slug"], name: "index_type_of_tours_on_slug", using: :btree
 
   create_table "visas", force: true do |t|
     t.string   "title"
     t.text     "overview"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "visas", ["slug"], name: "index_visas_on_slug", using: :btree
 
 end

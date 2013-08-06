@@ -1,16 +1,14 @@
 .left.static-page-left
   .static-content
-    %h1 Наши предложения
-    - @tours.each do |tour|
-      %dl
-        %dd
-          = image_tag(tour.tour_images.general.image.url(:big))
-        %dt
-          = link_to tour.title, tour_path(tour)
-        %dd
-          %p= raw tour.preview
-          %span
-            Цена от #{number_to_currency(tour.price, precision:0)}
+    - unless @tours.nil?
+      %h1 Наши предложения
+      - @tours.each do |tour|
+        .all-tour.clearfix
+          = image_tag(tour.tour_images.general.image.url(:medium))
+          .all-tour-info
+            %h2= link_to tour.title, tour_path(tour), title: "#{tour.title}"
+            %span
+              Цена от #{number_to_currency(tour.price, precision:0)}
 .right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

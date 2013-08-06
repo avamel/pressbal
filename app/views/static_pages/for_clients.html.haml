@@ -1,7 +1,9 @@
 .left.static-page-left
   .static-content
-    %h1= @for_clients.title
-    = raw @for_clients.content
+    - unless @for_clients.nil?
+      %h1= @for_clients.title
+      = raw @for_clients.content
+      = render partial: 'layouts/share'
 .right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

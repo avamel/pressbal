@@ -10,10 +10,21 @@ class Tour < ActiveRecord::Base
   has_many :tour_images, dependent: :destroy
   accepts_nested_attributes_for :tour_images, allow_destroy: true
 
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+
   scope :published, -> {where(published: true)}
   scope :active, -> {where(:active => true).last}
 
   after_save :last_active, if: -> tour {tour.active}
+
+  def should_generate_new_friendly_id?
+    new_record? || slug.blank? || update_record?
+  end
+
+  def normalize_friendly_id(text)
+    text.to_slug.normalize! :transliterations => :russian
+  end
 
   private
 

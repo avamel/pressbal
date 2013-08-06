@@ -1,6 +1,7 @@
-.manager
-  %h2 Менеджер тура
-  %p= @manager.name
-  %span= @manager.phone
-  %br
-  %span= @manager.email
+- unless @manager.nil?
+  .manager
+    %h2 Менеджер тура
+    %p= @manager.name
+    %span.m-phone= @manager.phone
+    %p
+    %span.m-email= @manager.email

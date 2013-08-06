@@ -1,5 +1,6 @@
-.tour-type
-  %h2Популярные виды отдыха
-  %ul
-    - @tour_types.each do |type|
-      %li= link_to type.title,  tours_path(type: type.id)
+- unless @tour_types.nil?
+  .tour-type
+    %h2Популярные виды отдыха
+    %ul
+      - @tour_types.each do |type|
+        %li= link_to type.title,  tours_path(type: type.id), title: "#{type.title}"

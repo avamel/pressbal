@@ -1,5 +1,5 @@
-.button
-  =link_to "Заявка на тур", new_request_path, class: 'bold'
+.down-panel-button
+  =link_to "Заявка на тур", new_request_path, class: 'bold', title: "Заявка на тур"
 .info
   %dl
     %dt.phone
@@ -17,4 +17,5 @@
       Наш офис:
     %dd
       =link_to 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34',
-      'http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map', target: '_blank'
+      'http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map', target: '_blank',
+      title: 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34'

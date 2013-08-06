@@ -2,16 +2,19 @@ class RequestsController < ApplicationController
   def new
     @news = News.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.take(3)
+    @attention = Tour.published.order("RAND()").take(3)
     @request = Request.new
   end
 
   def create
+    @news = News.last(3)
+    @tour_types = TypeOfTour.all
+    @attention = Tour.published.order("RAND()").take(3)
     @request = Request.new request_params
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to root_path, notice: 'Тур заказан. С вами свяжутся в ближайшее время' }
+        format.html { redirect_to root_path, notice: 'Ваша заявка принята. С вами свяжутся в ближайшее время' }
         format.json { render json: @request, status: :created, location: @request }
       else
         format.html { render action: "new" }

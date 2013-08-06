@@ -1,7 +1,9 @@
 .left.static-page-left
-  .static-content
-    %h1= @visa.title
-    = raw @visa.overview
+  .static-content.visas
+    - unless @visa.nil?
+      %h1= @visa.title
+      = raw @visa.overview
+      = render partial: 'layouts/share'
 .right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

@@ -48,6 +48,9 @@ gem 'paperclip',           github: 'thoughtbot/paperclip', branch: 'rails-4'
 gem 'bootstrap-sass'
 gem 'russian'
 gem 'masonry-rails'
+gem 'simple_form'
+gem 'friendly_id',         github: 'FriendlyId/friendly_id', branch: 'rails4'
+gem 'babosa'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
