@@ -3,4 +3,4 @@
     %h2Популярные виды отдыха
     %ul
       - @tour_types.each do |type|
-        %li= link_to type.title,  tours_path(type: type.id), title: "#{type.title}"
+        %li= link_to type.title,  tours_path(type: type.slug), title: "#{type.title}"

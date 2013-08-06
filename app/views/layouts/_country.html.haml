@@ -2,6 +2,4 @@
   .country-block
     %ul
       - @countries.each do |country|
-        %li
-          %span.flag{country: "#{country.title}"}
-          = link_to country.title, tours_path(country: country.id), title: "#{country.title}"
+        %li=link_to country.title, tours_path(country: country.slug), title: "#{country.title}", :style => "background: url('#{country.flag.url(:small)}') no-repeat;"

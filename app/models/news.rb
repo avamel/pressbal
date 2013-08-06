@@ -1,4 +1,5 @@
 class News < ActiveRecord::Base
+  validates_presence_of :title, :content
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806064448) do
+ActiveRecord::Schema.define(version: 20130806145314) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -63,11 +63,15 @@ ActiveRecord::Schema.define(version: 20130806064448) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "countries", force: true do |t|
-    t.string   "title",      null: false
+    t.string   "title",             null: false
     t.text     "overview"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "flag_file_name"
+    t.string   "flag_content_type"
+    t.integer  "flag_file_size"
+    t.datetime "flag_updated_at"
   end
 
   add_index "countries", ["slug"], name: "index_countries_on_slug", using: :btree

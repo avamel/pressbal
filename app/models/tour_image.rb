@@ -10,17 +10,17 @@ class TourImage < ActiveRecord::Base
   scope :general, -> {where(:active => true).last}
 
 
-  after_save :last_active, if: -> image { image.active }
-  after_save :always_have_one_active
+  after_save :last_active_image, if: -> image { image.active }
+  after_save :always_have_one_active_image
   validates :image, presence: true
 
   private
-  def always_have_one_active
+  def always_have_one_active_image
     if self.class.where(tour_id: tour_id).where(active: true).blank?
       self.class.where(tour_id: tour_id).first.update(active: true)
     end
   end
-  def last_active
+  def last_active_image
     self.class.where(tour_id: tour_id).where('id != ?', id).update_all(active: false)
   end
 end

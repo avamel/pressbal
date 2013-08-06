@@ -10,6 +10,8 @@ class Tour < ActiveRecord::Base
   has_many :tour_images, dependent: :destroy
   accepts_nested_attributes_for :tour_images, allow_destroy: true
 
+  validates_presence_of :title, :overview, :price, :preview, :countries, :type_of_tours, :tour_images
+
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
@@ -17,6 +19,7 @@ class Tour < ActiveRecord::Base
   scope :active, -> {where(:active => true).last}
 
   after_save :last_active, if: -> tour {tour.active}
+  after_save :always_have_one_active
 
   def should_generate_new_friendly_id?
     new_record? || slug.blank?
@@ -27,6 +30,11 @@ class Tour < ActiveRecord::Base
   end
 
   private
+  def always_have_one_active
+    if self.class.where(active: true).blank?
+      self.class.first.update(active: true)
+    end
+  end
 
   def last_active
     self.class.where('id != ?', id).update_all(active: false)

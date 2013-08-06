@@ -5,4 +5,5 @@ class StaticBlock < ActiveRecord::Base
   scope :for_agency, ->{find_by_block_key("for_agency")}
   scope :contacts, ->{find_by_block_key("contacts")}
   scope :for_tourists, ->{find_by_block_key("for_tourists")}
+  validates_presence_of :block_key, :title, :content
 end

@@ -4,8 +4,9 @@ class Country < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
   convert_options_prefix = "-background transparent -compose Copy -gravity center -extent"
-  has_attached_file :flag, styles: { small: "24x16^" },
-                    :convert_options => { :small => "#{convert_options_prefix} 24x16"}
+  has_attached_file :flag, styles: { small: "24x24^" },
+                    :convert_options => { :small => "#{convert_options_prefix} 24x24"}
+  validates_presence_of :title, :flag, :overview
 
   def should_generate_new_friendly_id?
     new_record? || slug.blank?

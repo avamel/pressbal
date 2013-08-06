@@ -6,6 +6,7 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   after_destroy :ensure_an_admin_remains
+  validates_presence_of :email
 
 
   private
