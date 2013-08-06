@@ -11,13 +11,11 @@ class ToursController < ApplicationController
     @tour = Tour.find params[:id]
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @tours = Tour.published.order("RAND()").take(4)
+    @tours = Tour.published.joins(:type_of_tours).where(id: @tour.type_of_tours).group('tours.id').order("RAND()").take(4)
     @manager = @tour.manager
   end
-  #joins(:type_of_tours).where('type_of_tour_ids LIKE ?', @tour.type_of_tours)
-  # private
-  #def resource_params
-  #  return [] if request.get?
-  #  [params.require(:tour).permit(:type_of_tour_ids)]
-  #end
+
+  def scoped_collection
+    super.uniq
+  end
 end
