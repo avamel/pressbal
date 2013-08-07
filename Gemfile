@@ -50,7 +50,7 @@ gem 'russian'
 gem 'masonry-rails'
 gem 'simple_form'
 gem 'friendly_id',         github: 'FriendlyId/friendly_id', branch: 'rails4'
-gem 'babosa'
+#gem 'babosa'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
