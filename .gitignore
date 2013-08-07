@@ -21,4 +21,5 @@
 doc/
 *.swp
 *~
+Gemfile.lock
 
