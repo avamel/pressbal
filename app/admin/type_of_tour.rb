@@ -10,6 +10,15 @@ ActiveAdmin.register TypeOfTour do
     default_actions
   end
 
+  show title: "Type of tour" do |tp|
+    attributes_table do
+      row :title
+      row :created_at do
+        Russian::strftime(tp.created_at, "%e %B %Y")
+      end
+    end
+  end
+
   controller do
     def resource_params
       return [] if request.get?

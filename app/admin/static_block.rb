@@ -1,7 +1,6 @@
 ActiveAdmin.register StaticBlock do
 
   index do
-    column :id
     column :block_key
     column :title do |st|
       link_to st.title, admin_static_block_path(st)
@@ -27,7 +26,9 @@ ActiveAdmin.register StaticBlock do
     attributes_table do
       row :block_key
       row :title
-      row :content
+      row :content do
+        raw st.content
+      end
       row :created_at do
         Russian::strftime(st.created_at, "%e %B %Y")
       end

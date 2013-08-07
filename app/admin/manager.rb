@@ -6,7 +6,25 @@ ActiveAdmin.register Manager do
     end
     column :phone
     column :email
+    column :number_of_tours do |manager|
+      manager.tours.count
+    end
     default_actions
+  end
+
+  show title: "Manager" do |manager|
+    attributes_table do
+      row :name
+      row :phone
+      row :email
+      row :number_of_tours do
+        manager.tours.count
+      end
+
+      row :created_at do
+        Russian::strftime(manager.created_at, "%e %B %Y")
+      end
+    end
   end
 
   form html: {multipart: true} do |f|

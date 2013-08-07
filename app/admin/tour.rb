@@ -38,6 +38,59 @@ ActiveAdmin.register Tour do
     default_actions
   end
 
+  show title: "Tour" do |tour|
+    attributes_table do
+      row :title
+      row :published do
+        if tour.published == true
+          status_tag("Yes", :ok)
+        else
+          status_tag("No", :error)
+        end
+      end
+      row :active do
+        if tour.active == true
+          status_tag("Yes", :ok)
+        else
+          status_tag("No", :error)
+        end
+      end
+      row :type_of_tours do
+        raw tour.type_of_tours.map { |x| link_to x.title, admin_type_of_tour_path(x.slug) }.join(', ')
+      end
+      row :countries do
+        raw tour.countries.map { |x| link_to x.title, admin_country_path(x.slug) }.join(', ')
+      end
+      if tour.manager.present?
+        row :manager do
+          link_to tour.manager.name, admin_manager_path(tour.manager)
+        end
+      end
+      row :preview do
+        raw tour.preview
+      end
+      row :overview do
+        raw tour.overview
+      end
+      if tour.tour_images.present?
+        row "Gallery" do
+          ul do
+            tour.tour_images.each do |img|
+              li do
+                div class: (img.active ? "general-img" : nil) do
+                  image_tag(img.image.url(:medium))
+                end
+              end
+            end
+          end
+        end
+      end
+      row :created_at do
+        Russian::strftime(tour.created_at, "%e %B %Y")
+      end
+    end
+  end
+
   form html: {multipart: true} do |f|
     f.inputs do
       f.input :title
@@ -61,7 +114,7 @@ ActiveAdmin.register Tour do
   controller do
     def resource_params
       return [] if request.get?
-      [params.require(:tour).permit(:title,:manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
+      [params.require(:tour).permit(:title, :manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
                                     tour_images_attributes: [:id, :active, :image, :_destroy])]
     end
   end

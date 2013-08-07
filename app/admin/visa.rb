@@ -10,6 +10,18 @@ ActiveAdmin.register Visa do
     default_actions
   end
 
+  show title: "Visas" do |visa|
+    attributes_table do
+      row :title
+      row :overview do
+        raw visa.overview
+      end
+      row :created_at do
+        Russian::strftime(visa.created_at, "%e %B %Y")
+      end
+    end
+  end
+
   form html: {multipart: true} do |f|
     f.inputs do
       f.input :title
