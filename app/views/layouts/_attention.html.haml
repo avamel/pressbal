@@ -3,7 +3,7 @@
     %h2 Обратите внимание
     - @attention.each do |f|
       .attention-item.clearfix
-        = image_tag(f.tour_images.general.image.url(:small))
+        = link_to image_tag(f.tour_images.general.image.url(:small)), tour_path(f), title: "Фото | #{f.title}"
         .attention-info
           %h3= link_to f.title, tour_path(f), title: "#{f.title}"
           %span

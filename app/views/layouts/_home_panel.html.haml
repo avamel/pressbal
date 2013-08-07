@@ -4,7 +4,7 @@
 .home-right.clearfix
   - if @tour.present?
     .active-left
-      = image_tag(@tour.tour_images.general.image.url(:big))
+      = link_to image_tag(@tour.tour_images.general.image.url(:big)), tour_path(@tour), title: "Фото | #{@tour.title}"
     .active-right
       %h2=link_to @tour.title, tour_path(@tour), title: "#{@tour.title}"
       %p= @tour.preview

@@ -4,7 +4,7 @@
     .masonry-block
       - @tours.each do |tour|
         .tours-item
-          = image_tag(tour.tour_images.general.image.url(:medium))
+          = link_to image_tag(tour.tour_images.general.image.url(:medium)), tour_path(tour), title: "Фото | #{tour.title}"
           %h3= link_to tour.title, tour_path(tour), title: "#{tour.title}"
           %span
             от #{ number_to_currency(tour.price, precision:0)}

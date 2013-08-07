@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807073352) do
+ActiveRecord::Schema.define(version: 20130807143225) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -98,6 +98,17 @@ ActiveRecord::Schema.define(version: 20130807073352) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "infos", force: true do |t|
+    t.string   "phone1"
+    t.string   "phone_cod1"
+    t.string   "phone2"
+    t.string   "phone_cod2"
+    t.string   "address"
+    t.string   "address_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "managers", force: true do |t|
     t.string   "name"

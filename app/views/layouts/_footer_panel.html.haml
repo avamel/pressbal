@@ -21,15 +21,13 @@
         Телефоны:
       %dd
         %span.number
-          +375 29
-          %span.bold 203 55 93
+          = @phone_cod1
+          %span.bold= @phone1
         %span.number
-          +375 29
-          %span.bold 603 19 34
+          = @phone_cod2
+          %span.bold= @phone2
     %dl
       %dt
         Наш офис:
       %dd
-        =link_to 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34',
-        'http://maps.yandex.ru/?ol=biz&oid=1103386268&ll=27.529528%2C53.907042&spn=0.010085%2C0.004010&z=17&l=map', target: '_blank',
-        title: 'Республика Беларусь, г. Минск, пер. Тучинский, 2-34'
+        =link_to "#{@address}", "#{@address_link}", target: '_blank', title: "#{@address}"
