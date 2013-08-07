@@ -66,6 +66,8 @@ ActiveAdmin.register Tour do
           link_to tour.manager.name, admin_manager_path(tour.manager)
         end
       end
+      row :meta_keywords
+      row :meta_description
       row :preview do
         raw tour.preview
       end
@@ -99,6 +101,8 @@ ActiveAdmin.register Tour do
       f.input :countries, as: :check_boxes
       f.input :type_of_tours, as: :check_boxes
       f.input :manager
+      f.input :meta_keywords
+      f.input :meta_description
       f.input :preview
       f.input :overview, as: :html
       f.input :price
@@ -114,7 +118,7 @@ ActiveAdmin.register Tour do
   controller do
     def resource_params
       return [] if request.get?
-      [params.require(:tour).permit(:title, :manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
+      [params.require(:tour).permit(:meta_description, :meta_keywords, :title, :manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
                                     tour_images_attributes: [:id, :active, :image, :_destroy])]
     end
   end

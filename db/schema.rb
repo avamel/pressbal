@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806145314) do
+ActiveRecord::Schema.define(version: 20130807073352) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -181,16 +181,18 @@ ActiveRecord::Schema.define(version: 20130806145314) do
   add_index "tour_visas", ["visa_id"], name: "index_tour_visas_on_visa_id", using: :btree
 
   create_table "tours", force: true do |t|
-    t.string   "title",                                               null: false
+    t.string   "title",                                                     null: false
     t.text     "preview"
     t.text     "overview"
-    t.decimal  "price",      precision: 10, scale: 0
-    t.boolean  "published",                           default: false
-    t.boolean  "active",                              default: false
+    t.decimal  "price",            precision: 10, scale: 0
+    t.boolean  "published",                                 default: false
+    t.boolean  "active",                                    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "manager_id"
     t.string   "slug"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
   end
 
   add_index "tours", ["manager_id"], name: "index_tours_on_manager_id", using: :btree

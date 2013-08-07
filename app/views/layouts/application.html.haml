@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title Pressbal tour
+    %title= full_title(@title)
+    %meta{ name: 'keywords', content: meta_keywords(@meta_keywords) }
+    %meta{ name: 'description', content: meta_description(@meta_description) }
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags

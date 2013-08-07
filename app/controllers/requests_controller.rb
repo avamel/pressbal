@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   def new
+    @title = "Заявка на тура"
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.order("RAND()").take(3)
@@ -7,6 +8,7 @@ class RequestsController < ApplicationController
   end
 
   def create
+    @title = "Заявка на тура"
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.order("RAND()").take(3)
