@@ -21,6 +21,13 @@
 
 en:
   hello: "Hello world"
+  views:
+    pagination:
+      previous: "&lt; Назад"
+      next: "Далее &gt;"
+      truncate: "&hellip;&rdquo;"
+      first: "Первая"
+      last: "Последняя"
   active_admin:
     dashboard: "Панель управления"
     dashboard_welcome:

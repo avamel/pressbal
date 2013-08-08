@@ -13,6 +13,7 @@
             %h2= link_to tour.title, tour_path(tour), title: "#{tour.title}"
             %span
               Цена от #{tour.price} #{tour.currency}
+      = paginate @tours
 .right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

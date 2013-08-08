@@ -11,6 +11,7 @@
               = raw strip_tags(news.content).truncate(300)
             %dd.news-date
               %span= Russian::strftime(news.created_at, "%e %B %Y")
+      = paginate @news_all
 .right.static-page-right
   = render partial: 'layouts/tour_type'
   = render partial: 'layouts/news'

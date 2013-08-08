@@ -4,7 +4,7 @@ class VisasController < ApplicationController
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.get_random.take(3)
-    @visas = Visa.all
+    @visas = Visa.all.page(params[:page]).per(30)
   end
 
   def show

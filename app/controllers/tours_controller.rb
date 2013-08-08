@@ -1,9 +1,9 @@
 class ToursController < ApplicationController
   def index
     @title = "Все туры"
-    @tours = Tour.published
-    @tours = @tours.joins(:countries).where('countries.slug = ?', params[:country]) if params[:country]
-    @tours = @tours.joins(:type_of_tours).where('type_of_tours.slug = ?', params[:type]) if params[:type]
+    @tours = Tour.published.page(params[:page]).per(10)
+    @tours = @tours.joins(:countries).where('countries.slug = ?', params[:country]).page(params[:page]).per(10) if params[:country]
+    @tours = @tours.joins(:type_of_tours).where('type_of_tours.slug = ?', params[:type]).page(params[:page]).per(10) if params[:type]
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
   end
