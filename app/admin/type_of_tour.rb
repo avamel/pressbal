@@ -19,6 +19,13 @@ ActiveAdmin.register TypeOfTour do
     end
   end
 
+  form html: {multipart: true} do |f|
+    f.inputs do
+      f.input :title
+      f.buttons
+    end
+  end
+
   controller do
     def resource_params
       return [] if request.get?

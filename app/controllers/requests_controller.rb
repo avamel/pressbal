@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
     @title = "Заявка на тура"
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
     @request = Request.new
   end
 
@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
     @title = "Заявка на тура"
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
     @request = Request.new request_params
 
     respond_to do |format|

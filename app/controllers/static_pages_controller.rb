@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @home = StaticBlock.home
-    @tours = Tour.published.order("RAND()").take(4)
+    @tours = Tour.published.get_random
     @tour = Tour.active
     @countries = Country.all
     @news = News.published.last(3)
@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
     @title = @about_as.title if @about_as.present?
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
 
   def contacts
@@ -22,7 +22,7 @@ class StaticPagesController < ApplicationController
     @title = @contacts.title if @contacts.present?
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
 
   def for_agency
@@ -30,7 +30,7 @@ class StaticPagesController < ApplicationController
     @title = @for_agency.title if @for_agency.present?
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
 
   def for_clients
@@ -38,14 +38,14 @@ class StaticPagesController < ApplicationController
     @title = @for_clients.title if @for_clients.present?
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
   def for_tourists
     @for_tourists = StaticBlock.for_tourists
     @title = @for_tourists.title if @for_tourists.present?
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
 
 end

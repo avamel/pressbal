@@ -7,7 +7,7 @@ class TourImage < ActiveRecord::Base
                                          :small => "#{convert_options_prefix} 90x60",
                                          wbig: "#{convert_options_prefix} 560x272"}
 
-  scope :general, -> { where(:active => true).last }
+  scope :general, -> { where(:active => true).first }
 
 
   after_save :last_active_image, if: -> image { image.active }

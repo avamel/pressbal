@@ -17,6 +17,7 @@ class Tour < ActiveRecord::Base
 
   scope :published, -> {where(published: true)}
   scope :active, -> {where(:active => true).last}
+  scope :get_random, -> { where(:id => pluck(:id).sort_by { rand }.slice(0, 4))}
 
   after_save :last_active, if: -> tour {tour.active}
   after_save :always_have_one_active

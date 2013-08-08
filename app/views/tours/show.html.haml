@@ -7,7 +7,7 @@
           - @tour.tour_images.each do |i|
             = image_tag(i.image.url(:wbig))
         %strong Стоимость тура:
-        %span от #{number_to_currency(@tour.price, precision: 0)}
+        %span от #{@tour.price} #{@tour.currency}
         .tour-button
           = link_to "Заказать", new_tour_order_path(@tour), title: "Заказать тур"
       .overview

@@ -4,8 +4,12 @@
     .masonry-block
       - @tours.each do |tour|
         .tours-item
-          = link_to image_tag(tour.tour_images.general.image.url(:medium)), tour_path(tour), title: "Фото | #{tour.title}"
+          - first_image = tour.tour_images.where(active: true).first if tour.tour_images.where(active: true)
+          - if first_image
+            = link_to image_tag(tour.tour_images.general.image.url(:medium)), tour_path(tour), title: "Фото | #{tour.title}"
+          - else
+            = link_to "Нет фото", tour_path(tour), title: "Фото | #{tour.title}"
           %h3= link_to tour.title, tour_path(tour), title: "#{tour.title}"
           %span
-            от #{ number_to_currency(tour.price, precision:0)}
+            от #{tour.price} #{tour.currency}
     %p= link_to "Все предложения", tours_path, title: "Все предложения"

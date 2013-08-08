@@ -33,7 +33,7 @@ ActiveAdmin.register Tour do
       raw tour.countries.map { |x| link_to x.title, admin_country_path(x.slug) }.join(', ')
     end
     column :price do |tour|
-      number_to_currency(tour.price, precision: 0)
+      "#{tour.price} #{tour.currency}"
     end
     default_actions
   end
@@ -74,6 +74,9 @@ ActiveAdmin.register Tour do
       row :overview do
         raw tour.overview
       end
+      row :price do
+        "#{tour.price} #{tour.currency}"
+      end
       if tour.tour_images.present?
         row "Gallery" do
           ul do
@@ -106,6 +109,7 @@ ActiveAdmin.register Tour do
       f.input :preview
       f.input :overview, as: :html
       f.input :price
+      f.input :currency
       f.has_many :tour_images do |x|
         x.input :_destroy, as: :boolean, required: false, label: 'Remove' if x.object.id.present?
         x.input :image, as: :file, hint: f.template.image_tag(x.object.image.url(:medium)), input_html: {value: x.object.image.url(:medium)}
@@ -118,7 +122,7 @@ ActiveAdmin.register Tour do
   controller do
     def resource_params
       return [] if request.get?
-      [params.require(:tour).permit(:meta_description, :meta_keywords, :title, :manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
+      [params.require(:tour).permit(:currency, :meta_description, :meta_keywords, :title, :manager_id, :overview, :price, :active, :preview, :published, :country_ids => [], :type_of_tour_ids => [],
                                     tour_images_attributes: [:id, :active, :image, :_destroy])]
     end
   end

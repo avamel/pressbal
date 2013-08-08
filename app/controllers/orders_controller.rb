@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
     @title = "Заказ тура"
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
     @tour = Tour.find params[:tour_id]
     @order = @tour.orders.build
   end
@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     @title = "Заказ тура"
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
     @tour = Tour.find params[:tour_id]
     @order = @tour.orders.build order_params
 

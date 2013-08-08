@@ -15,7 +15,7 @@ class ToursController < ApplicationController
     @title = @tour.title
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @tours = Tour.published.joins(:type_of_tours).where(id: @tour.type_of_tours).group('tours.id').order("RAND()").take(4)
+    @tours = Tour.published.joins(:type_of_tours).where(id: @tour.type_of_tours).group('tours.id').get_random
     @manager = @tour.manager
   end
 

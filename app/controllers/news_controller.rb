@@ -4,7 +4,7 @@ class NewsController < ApplicationController
     @news_all = News.published
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
 
   def show
@@ -12,6 +12,6 @@ class NewsController < ApplicationController
     @title = @news_item.title
     @news = News.published.last(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.order("RAND()").take(3)
+    @attention = Tour.published.get_random.take(3)
   end
 end

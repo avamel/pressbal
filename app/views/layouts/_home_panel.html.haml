@@ -4,9 +4,13 @@
 .home-right.clearfix
   - if @tour.present?
     .active-left
-      = link_to image_tag(@tour.tour_images.general.image.url(:big)), tour_path(@tour), title: "Фото | #{@tour.title}"
+      - first_image = @tour.tour_images.where(active: true).first if @tour.tour_images.where(active: true)
+      - if first_image
+        = link_to image_tag(first_image.image.url(:big)), tour_path(@tour), title: "Фото | #{@tour.title}"
+      - else
+        = link_to "Нет фото", tour_path(@tour), title: "Фото | #{@tour.title}"
     .active-right
       %h2=link_to @tour.title, tour_path(@tour), title: "#{@tour.title}"
       %p= @tour.preview
       %span
-        от #{number_to_currency(@tour.price, precision: 0)}
+        от #{@tour.price} #{@tour.currency}
