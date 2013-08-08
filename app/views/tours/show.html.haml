@@ -10,8 +10,9 @@
         %span от #{number_to_currency(@tour.price, precision: 0)}
         .tour-button
           = link_to "Заказать", new_tour_order_path(@tour), title: "Заказать тур"
-      = raw @tour.overview
-      = render partial: 'layouts/share'
+      .overview
+        = raw @tour.overview
+        = render partial: 'layouts/share'
   = render partial: 'layouts/similar_tours_block'
 .right.show-tour-right
   = render partial: 'layouts/manager'
