@@ -8,7 +8,7 @@
             %dt
               = link_to news.title, news_path(news), title: "#{news.title}"
             %dd
-              = truncate(strip_tags(news.content), length: 300)
+              = raw strip_tags(news.content).truncate(300)
             %dd.news-date
               %span= Russian::strftime(news.created_at, "%e %B %Y")
 .right.static-page-right
