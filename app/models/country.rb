@@ -7,6 +7,7 @@ class Country < ActiveRecord::Base
   has_attached_file :flag, styles: { small: "24x24^" },
                     :convert_options => { :small => "#{convert_options_prefix} 24x24"}
   validates_presence_of :title, :flag, :overview
+  validates_uniqueness_of :title
 
   def should_generate_new_friendly_id?
     new_record? || slug.blank?

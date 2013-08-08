@@ -11,6 +11,7 @@ class Tour < ActiveRecord::Base
   accepts_nested_attributes_for :tour_images, allow_destroy: true
 
   validates_presence_of :title, :overview, :price, :preview, :countries, :type_of_tours, :tour_images
+  validates_uniqueness_of :title
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
