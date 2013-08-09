@@ -10,7 +10,7 @@ class Tour < ActiveRecord::Base
   has_many :tour_images, dependent: :destroy
   accepts_nested_attributes_for :tour_images, allow_destroy: true
 
-  validates_presence_of :title, :overview, :price, :preview, :countries, :type_of_tours, :tour_images
+  validates_presence_of :title, :overview, :price, :preview, :countries, :type_of_tours, :tour_images, :currency
   validates_uniqueness_of :title
 
   extend FriendlyId

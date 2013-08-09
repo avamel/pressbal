@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   def new
     @title = "Заявка на тура"
-    @news = News.published.last(3)
+    @news = News.published.take(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.get_random.take(3)
     @request = Request.new
@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 
   def create
     @title = "Заявка на тура"
-    @news = News.published.last(3)
+    @news = News.published.take(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.get_random.take(3)
     @request = Request.new request_params

@@ -12,7 +12,7 @@
           = link_to "Заказать", new_tour_order_path(@tour), title: "Заказать тур"
       .overview
         = raw @tour.overview
-        = render partial: 'layouts/share'
+      = render partial: 'layouts/share'
   = render partial: 'layouts/similar_tours_block'
 .right.show-tour-right
   = render partial: 'layouts/manager'

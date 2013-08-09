@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def new
     @title = "Заказ тура"
-    @news = News.published.last(3)
+    @news = News.published.take(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.get_random.take(3)
     @tour = Tour.find params[:tour_id]
@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   def create
     @title = "Заказ тура"
-    @news = News.published.last(3)
+    @news = News.published.take(3)
     @tour_types = TypeOfTour.all
     @attention = Tour.published.get_random.take(3)
     @tour = Tour.find params[:tour_id]
