@@ -51,6 +51,7 @@ gem 'masonry-rails'
 gem 'simple_form'
 gem 'friendly_id',         github: 'FriendlyId/friendly_id', branch: 'rails4'
 gem 'babosa'
+gem 'fotoramajs'
 gem 'kaminari'
 gem 'cancan'
 

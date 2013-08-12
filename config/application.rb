@@ -4,13 +4,20 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+#Bundler.require(*Rails.groups(:assets => %w(development test)))
 Bundler.require(:default, Rails.env)
 
 module Pressbal
   class Application < Rails::Application
+    #config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w(ckeditor/*)
     config.assets.enabled = true
+
+    config.encoding = "utf-8"
+    config.filter_parameters += [:password]
+    config.active_support.escape_html_entities_in_json = true
+    config.assets.version = '1.0'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
