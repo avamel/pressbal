@@ -52,6 +52,7 @@ gem 'simple_form'
 gem 'friendly_id',         github: 'FriendlyId/friendly_id', branch: 'rails4'
 gem 'babosa'
 gem 'kaminari'
+gem 'cancan'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
