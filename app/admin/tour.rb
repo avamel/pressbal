@@ -30,7 +30,7 @@ ActiveAdmin.register Tour do
       link_to tour.title, admin_tour_path(tour)
     end
     column :countries do |tour|
-      raw tour.countries.map { |x| link_to x.title, admin_country_path(x.slug) }.join(', ')
+      raw tour.countries.map { |x| link_to x.title, admin_country_path(x.id) }.join(', ')
     end
     column :price do |tour|
       "#{tour.price} #{tour.currency}"
@@ -56,10 +56,10 @@ ActiveAdmin.register Tour do
         end
       end
       row :type_of_tours do
-        raw tour.type_of_tours.map { |x| link_to x.title, admin_type_of_tour_path(x.slug) }.join(', ')
+        raw tour.type_of_tours.map { |x| link_to x.title, admin_type_of_tour_path(x.id) }.join(', ')
       end
       row :countries do
-        raw tour.countries.map { |x| link_to x.title, admin_country_path(x.slug) }.join(', ')
+        raw tour.countries.map { |x| link_to x.title, admin_country_path(x.id) }.join(', ')
       end
       if tour.manager.present?
         row :manager do

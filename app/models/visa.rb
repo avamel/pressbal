@@ -6,12 +6,8 @@ class Visa < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
-  def should_generate_new_friendly_id?
-    new_record? || slug.blank?
-  end
-
   def normalize_friendly_id(text)
-    text.to_slug.normalize! :transliterations => :russian
+    text.to_slug.normalize! :transliterations => [:russian, :latin]
   end
 
 end

@@ -6,10 +6,10 @@ class Order < ActiveRecord::Base
   private
 
   def email_validation
-    errors.add(:email, "введен некорректно") unless self.email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+    errors.add(:email, 'введен некорректно') unless self.email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   end
 
   def phone_validation
-    errors.add(:phone, "веден некорректно") unless self.phone =~ /[+]\d+/
+    errors.add(:phone, 'веден некорректно') unless self.phone =~ /[+]\d+/
   end
 end

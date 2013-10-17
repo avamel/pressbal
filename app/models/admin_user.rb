@@ -13,7 +13,7 @@ class AdminUser < ActiveRecord::Base
 
   def ensure_an_admin_remains
     if AdminUser.count.zero?
-      raise "Последний пользователь не может быть удален!"
+      raise 'Последний пользователь не может быть удален!'
     end
   end
 

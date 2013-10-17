@@ -1,17 +1,13 @@
 class NewsController < ApplicationController
   def index
-    @title = "Новости"
+    @title = 'Новости'
     @news_all = News.published.page(params[:page]).per(8)
-    @news = News.published.take(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.get_random.take(3)
   end
 
   def show
     @news_item = News.find params[:id]
     @title = @news_item.title
-    @news = News.published.take(3)
     @tour_types = TypeOfTour.all
-    @attention = Tour.published.get_random.take(3)
   end
 end

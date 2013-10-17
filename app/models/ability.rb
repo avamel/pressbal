@@ -2,9 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    if user.try(:class).try(:name) == 'AdminUser'
     can :access, :ckeditor
-    #
-    if user
     can [:read, :create, :destroy], Ckeditor::Picture
     can [:read, :create, :destroy], Ckeditor::AttachmentFile
     end

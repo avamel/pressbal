@@ -16,27 +16,21 @@ class Tour < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
-  scope :published, -> {where(published: true)}
-  scope :active, -> {where(:active => true).last}
-  scope :get_random, -> { where(:id => pluck(:id).sort_by { rand }.slice(0, 4))}
+  scope :published, -> { where(published: true) }
+  scope :active, -> { where(:active => true).last }
+  scope :get_random, ->(number) { where(:id => pluck(:id).sort_by { rand }.slice(0, number)) }
 
-  after_save :last_active, if: -> tour {tour.active}
+  after_save :last_active, if: -> tour { tour.active }
   after_save :always_have_one_active
-  after_destroy :always_have_one_active, if: -> tour {tour.active}
-
-  def should_generate_new_friendly_id?
-    new_record? || slug.blank?
-  end
+  after_destroy :always_have_one_active, if: -> tour { tour.active }
 
   def normalize_friendly_id(text)
-    text.to_slug.normalize! :transliterations => :russian
+    text.to_slug.normalize! :transliterations => [:russian, :latin]
   end
 
   private
   def always_have_one_active
-    if self.class.where(active: true).blank?
-      self.class.first.update(active: true)
-    end
+    self.class.first.update(active: true) if self.class.where(active: true).blank?
   end
 
   def last_active
